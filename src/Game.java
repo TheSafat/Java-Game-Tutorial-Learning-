@@ -8,9 +8,10 @@ public class Game extends JPanel implements ActionListener {
     Player p;
     public Game(){
         setFocusable(true);
-        timer = new Timer(17, this);
+        timer = new Timer(35, this);
         timer.start();
         p = new Player(100, 100);
+        addKeyListener(new KeyInput(p));
     }
 
     public void paint(Graphics g){
