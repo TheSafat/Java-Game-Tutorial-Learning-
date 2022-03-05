@@ -18,6 +18,14 @@ public class Player {
     public void update(){
         x += velX;
         y += velY;
+
+        // basic collision
+        if(x < 0) x=1;
+        if(x > 600-16) x = 600-16;  // if(x > 600-16) x = -(600-16);
+
+        if(y < 0) y=1;
+        if(y > 348) y = 348;  // if(x > 400-16) x = -(400-16);
+
     }
 
     public void keyPressed(KeyEvent e){
