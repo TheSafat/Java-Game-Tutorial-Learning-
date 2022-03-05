@@ -13,7 +13,8 @@ public class Player {
     }
 
     public void update(){
-
+        x += 2;
+        y += 1;
     }
 
     public void draw(Graphics2D g2d){

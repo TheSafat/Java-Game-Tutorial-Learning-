@@ -23,6 +23,7 @@ public class Game extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         //System.out.println("action performed");
+        p.update();
         repaint();
     }
 }
