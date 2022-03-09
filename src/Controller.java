@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.LinkedList;
 
 public class Controller {
-    LinkedList <Enemy> e = new LinkedList<>();
+    static LinkedList <Enemy> e = new LinkedList<>();
 
     Enemy tempEnemy;
 
@@ -32,6 +32,10 @@ public class Controller {
 
     public void removeEnemy(Enemy enemy){
         e.remove(enemy);
+    }
+
+    public static LinkedList<Enemy> getEnemyBounds(){
+        return e;
     }
 
 }

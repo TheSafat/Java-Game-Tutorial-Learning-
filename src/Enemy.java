@@ -18,8 +18,12 @@ public class Enemy {
         //y -= 5;
     }
 
+    public Rectangle getBounds(){
+        return new Rectangle(x, y, 32, 32);
+    }
+
     public void draw(Graphics2D g2d){
-        System.out.println("hello from enemy");
+        //System.out.println("hello from enemy");
         g2d.drawImage(getEnemyImage(), x, y, null);
     }
 

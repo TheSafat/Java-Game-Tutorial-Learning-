@@ -2,12 +2,15 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.LinkedList;
 
 public class Player {
     int x;
     int y;
     int velX = 0;
     int velY = 0;
+
+    private LinkedList<Enemy> e = Controller.getEnemyBounds();
 
 
     public Player(int x, int y){
@@ -25,6 +28,13 @@ public class Player {
 
         if(y < 0) y=1;
         if(y > 348) y = 348;  // if(x > 400-16) x = -(400-16);
+
+        // collision checking
+        for(int i=0 ; i<e.size(); i++){
+            if(getBounds().intersects(e.get(i).getBounds())){
+                System.out.println("Collision");
+            }
+        }
 
     }
 
@@ -54,9 +64,14 @@ public class Player {
         }
     }
 
+    public Rectangle getBounds(){
+        return new Rectangle(x, y, 16, 16);
+    }
+
     public void draw(Graphics2D g2d){
         //System.out.println("Hello from draw");
         g2d.drawImage(getPlayerImage(), x, y, null);
+        g2d.draw(getBounds());
 
         //g2d.fillRect(40, 50, 60, 80);
 
